@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+
 describe("Orange HRM POM Testing", () => {
   it("Page Login", () => {
     cy.visit(
@@ -12,3 +13,4 @@ describe("Orange HRM POM Testing", () => {
     cy.contains("Dashboard").should("be.visible");
   });
 });
+

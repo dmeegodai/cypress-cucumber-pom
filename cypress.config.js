@@ -7,5 +7,16 @@ module.exports = defineConfig({
       // implement node event listeners here
      
     },
+    baseUrl: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    chromeWebSecurity: false,
+    experimentalSessionAndOrigin: true,
+    defaultCommandTimeout: 10000,
+    pageLoadTimeout: 120000,
+    screenshotOnRunFailure: true,
+    trashAssetsBeforeRuns: true,
+    video: false,
+    videoUploadOnPasses: false,
+    viewportHeight: 768,
+    viewportWidth: 1366,
   },
 });
