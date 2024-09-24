@@ -1,16 +1,20 @@
 /// <reference types="cypress"/>
+import loginPage from "../../support/objectPages/loginPage";
+import dashboardPage from "../../support/objectPages/dashboardPage" ;
 
-describe("Orange HRM POM Testing", () => {
-  it("Page Login", () => {
-    cy.visit(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
-    cy.xpath("//input[@name='username']").should("be.visible");
 
-    cy.xpath("//input[@name='username']").type("Admin");
-    cy.xpath("//input[@name='password']").type("admin123");
-    cy.get(".oxd-button").click();
-    cy.contains("Dashboard").should("be.visible");
+describe("Orange HRM POM Implementation", () => {
+  beforeEach(() => {
+    cy.visit(Cypress.config("baseUrl"));
   });
-});
 
+  describe("Admin login positive test scenario", ()=>{
+    it("Should login succsessfully", ()=>{
+      loginPage.typeusernameInput('Admin');
+      loginPage.typepasswordInput('admin123');
+      loginPage.clickloginButton(); 
+      dashboardPage.validateDashboardText();
+    });
+  });
+ 
+});

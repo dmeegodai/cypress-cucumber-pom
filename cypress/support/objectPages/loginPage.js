@@ -1,14 +1,8 @@
 class loginPage {
   elements = {
-    usernameInput: () => {
-      cy.xpath("//input[@name='username']");
-    },
-    passwordInput: () => {
-      cy.xpath("//input[@name='password']").type("admin123");
-    },
-    loginButton: () => {
-      cy.get(".oxd-button");
-    },
+    usernameInput: () => cy.xpath("//input[@name='username']"),
+    passwordInput: () => cy.xpath("//input[@name='password']"),
+    loginButton: () => cy.get(".oxd-button"),
   };
 
   // defined methods
