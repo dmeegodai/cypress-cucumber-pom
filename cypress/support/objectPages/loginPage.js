@@ -3,6 +3,7 @@ class loginPage {
     usernameInput: () => cy.xpath("//input[@name='username']"),
     passwordInput: () => cy.xpath("//input[@name='password']"),
     loginButton: () => cy.get(".oxd-button"),
+    warningMessage: () => cy.get(".oxd-alert"),
   };
 
   // defined methods
@@ -14,6 +15,9 @@ class loginPage {
   }
   clickloginButton() {
     this.elements.loginButton().click();
+  }
+  validateWarningMessage() {
+    this.elements.warningMessage().should("have.text", "Invalid credentials");
   }
 }
 
