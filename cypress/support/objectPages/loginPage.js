@@ -4,6 +4,8 @@ class loginPage {
     passwordInput: () => cy.xpath("//input[@name='password']"),
     loginButton: () => cy.get(".oxd-button"),
     warningMessage: () => cy.get(".oxd-alert"),
+    emptyUsernameMessage: () => cy.xpath("(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]"),
+    emptyPasswordMessage: () => cy.xpath("(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]"),
   };
 
   // defined methods
@@ -19,6 +21,11 @@ class loginPage {
   validateWarningMessage() {
     this.elements.warningMessage().should("have.text", "Invalid credentials");
   }
+  validateEmptyWarningMessage() {
+    this.elements.emptyUsernameMessage().should("have.text", "Required");
+    this.elements.emptyPasswordMessage().should("have.text", "Required");
+  }
+
 }
 
 module.exports = new loginPage();

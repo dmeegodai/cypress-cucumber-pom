@@ -30,5 +30,12 @@ describe("Orange HRM POM Implementation", () => {
       loginPage.clickloginButton();
       loginPage.validateWarningMessage();
     });
+
+    it("Should have displayed empty username and password message", () =>{
+      loginPage.typeusernameInput(" ");
+      loginPage.typepasswordInput(" ");
+      loginPage.clickloginButton();
+      loginPage.validateEmptyWarningMessage();
+    });
   });
 });
