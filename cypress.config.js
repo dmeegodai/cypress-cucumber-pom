@@ -8,6 +8,7 @@ module.exports = defineConfig({
      
     },
     baseUrl: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    dashboardUrl:"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
     defaultCommandTimeout: 10000,

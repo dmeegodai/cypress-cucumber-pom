@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 import loginPage from "../../support/objectPages/loginPage";
 import dashboardPage from "../../support/objectPages/dashboardPage";
+import resetpasswordPage from "../../support/objectPages/resetpasswordPage";
 
 describe("Orange HRM POM Implementation", () => {
   beforeEach(() => {
@@ -31,11 +32,25 @@ describe("Orange HRM POM Implementation", () => {
       loginPage.validateWarningMessage();
     });
 
-    it("Should have displayed empty username and password message", () =>{
+    it("Should have displayed empty username and password message", () => {
       loginPage.typeusernameInput(" ");
       loginPage.typepasswordInput(" ");
       loginPage.clickloginButton();
       loginPage.validateEmptyWarningMessage();
+    });
+  });
+
+  describe("Admin forget password senario", () => {
+    it("Should able to click on forget password button", () => {
+      loginPage.clickForgotPasswordButton();
+      resetpasswordPage.validateRestPasswordTitle();
+    });
+
+    it("Should be bale to reset admin password", () => {
+      loginPage.clickForgotPasswordButton();
+      resetpasswordPage.enterAdminUserName("Admin");
+      resetpasswordPage.clickResetPassword();
+      resetpasswordPage.validateResetSuccessTitle();
     });
   });
 });

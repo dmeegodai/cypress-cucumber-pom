@@ -4,8 +4,15 @@ class loginPage {
     passwordInput: () => cy.xpath("//input[@name='password']"),
     loginButton: () => cy.get(".oxd-button"),
     warningMessage: () => cy.get(".oxd-alert"),
-    emptyUsernameMessage: () => cy.xpath("(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]"),
-    emptyPasswordMessage: () => cy.xpath("(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]"),
+    emptyUsernameMessage: () =>
+      cy.xpath(
+        "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]"
+      ),
+    emptyPasswordMessage: () =>
+      cy.xpath(
+        "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]"
+      ),
+    forgotPasswordButton: () => cy.get(".orangehrm-login-forgot > .oxd-text"),
   };
 
   // defined methods
@@ -25,7 +32,9 @@ class loginPage {
     this.elements.emptyUsernameMessage().should("have.text", "Required");
     this.elements.emptyPasswordMessage().should("have.text", "Required");
   }
-
+  clickForgotPasswordButton() {
+    this.elements.forgotPasswordButton().click();
+  }
 }
 
 module.exports = new loginPage();
