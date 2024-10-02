@@ -6,5 +6,5 @@ Cypress.Commands.add("login", (username, password) => {
     "//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']"
   ).click();
   cy.url().should("include", "/dashboard");
-  cy.wait(3000);
+  cy.wait(4000);
 });
