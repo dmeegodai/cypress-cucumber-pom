@@ -7,7 +7,7 @@ module.exports = defineConfig({
       // implement node event listeners here
      
     },
-    baseUrl: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    baseUrl: "https://opensource-demo.orangehrmlive.com/auth/login",
     dashboardUrl:"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
