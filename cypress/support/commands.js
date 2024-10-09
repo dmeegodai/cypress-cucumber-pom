@@ -8,3 +8,7 @@ Cypress.Commands.add("login", (username, password) => {
   cy.url().should("include", "/dashboard");
   cy.wait(4000);
 });
+
+Cypress.Commands.add("navigateToMyInfoTab", () => {
+  cy.get(":nth-child(6) > .oxd-main-menu-item > .oxd-text").click();
+});
